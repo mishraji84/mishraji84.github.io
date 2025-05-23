@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Elite Crane & Towing</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #fff;
+      color: #333;
+    }
+
+    header {
+      background: url('C:/Users/ajamishr/Documents/MyProject/CraneService/image1.jpg') no-repeat center center/cover;
+      color: white;
+      text-align: center;
+      padding: 80px 20px;
+    }
+
+    header h1 {
+      font-size: 3rem;
+      margin-bottom: 10px;
+    }
+
+    header p {
+      font-size: 1.3rem;
+      opacity: 0.9;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      background: #2b3e50;
+    }
+
+    nav button {
+      background: none;
+      border: none;
+      padding: 1rem 2rem;
+      color: white;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    nav button:hover, nav button.active {
+      background: #1a2835;
+    }
+
+    .tab-content {
+      display: none;
+      padding: 2rem;
+      max-width: 800px;
+      margin: auto;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .tab-content.active {
+      display: block;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background: #2b3e50;
+      color: white;
+      margin-top: 2rem;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    @media (max-width: 600px) {
+      nav button {
+        padding: 1rem;
+        font-size: 0.9rem;
+      }
+
+      header h1 {
+        font-size: 2rem;
+      }
+
+      header p {
+        font-size: 1rem;
+      }
+    }
+.marquee {
+  background-color: #d9534f;
+  color: white;
+  font-weight: bold;
+  padding: 0.5rem;
+  font-size: 1rem;
+  text-align: center;
+}
+
+  </style>
+</head>
+<body>
+
+<div class="marquee">
+  <marquee behavior="scroll" direction="left" scrollamount="10">
+    🚨 Urgent towing and Crane service within 30 min all over Noida and Greater Noida 🚨
+  </marquee>
+</div>
+
+<header>
+<nav style="display: flex; justify-content: center; background-color: #2b3e50;">
+<p>
+      <a href="https://wa.me/919731479078" target="_blank" style="color: #25D366; text-decoration: none; font-size: 1.4rem; font-weight: bold;">
+        <img src="https://img.icons8.com/color/28/000000/whatsapp--v1.png" alt="WhatsApp" style="vertical-align: middle; margin-right: 8px;" />
+        +91 97314 79078 (WhatsApp)
+      </a>
+    <button class="tab-btn active" onclick="showTab('services')">Services</button>
+    <button class="tab-btn" onclick="showTab('about')">About Us</button>
+    <button class="tab-btn" onclick="showTab('contact')">Contact</button>
+	
+  </nav>
+  <div style="text-align: center; padding: 40px 20px; background: url('crane.jpg') no-repeat center center/cover; color: white;">
+    <h1 style="margin-bottom: 10px;">Elite Crane & Towing Services</h1>
+    <p style="font-size: 1.2rem;">Reliable | Fast | Professional – 24/7 Emergency Assistance</p>
+    <p>
+      <a href="https://wa.me/919731479078" target="_blank" style="color: #25D366; text-decoration: none; font-size: 1.4rem; font-weight: bold;">
+        <img src="https://img.icons8.com/color/28/000000/whatsapp--v1.png" alt="WhatsApp" style="vertical-align: middle; margin-right: 8px;" />
+        +91 97314 79078 (WhatsApp)
+      </a>
+    </p>
+  </div>
+
+  
+</header>
+
+<div id="services" class="tab-content active">
+  <h2>Our Services</h2>
+  <p><strong>Fast. Safe. Professional.</strong> We’re equipped with the latest gear and skilled operators to handle everything from breakdowns to big-lift jobs — all with <span style="color: #d9534f;"><strong>30-Minute Emergency Response</strong></span> in most areas!</p>
+  <ul>
+    <li><strong>🚨 24/7 Emergency Towing:</strong> Always on call, day or night — anywhere in the city.</li>
+    <li><strong>🏗 Heavy-Duty Crane Rentals:</strong> Ideal for construction, industrial lifting, and oversized loads.</li>
+    <li><strong>🚙 Vehicle Recovery:</strong> Stuck in mud or snow? Rolled over? We’ll recover it, fast and safely.</li>
+    <li><strong>🏢 Construction Crane Operations:</strong> Certified crane operators and safety-compliant services for every site.</li>
+    <li><strong>🛻 Flatbed & Long-Distance Towing:</strong> Perfect for luxury vehicles, motorcycles, and interstate transfers.</li>
+    <li><strong>⏱ 30-Minute Emergency Service:</strong> Need help fast? We aim to reach you in 30 minutes or less, wherever possible.</li>
+  </ul>
+</div>
+
+<div id="about" class="tab-content">
+  <h2>About Us</h2>
+  <p>Elite Crane & Towing has been serving Metropolis and surrounding regions for over 15 years. Our mission is to provide top-notch crane and towing services with speed, safety, and customer satisfaction at the forefront. Whether it's a roadside emergency or a major lifting job, we've got the equipment and experience to handle it.</p>
+</div>
+
+<div id="contact" class="tab-content">
+  <h2>Contact Us</h2>
+  <p><strong>Phone:</strong> +1 800 123 4567</p>
+  <p><strong>Email:</strong> support@elitetransport.com</p>
+  <p><strong>Office:</strong> 123 Industrial Blvd, Metropolis, USA</p>
+  <p><strong>Working Hours:</strong> 24/7 Emergency Services</p>
+</div>
+
+<footer>
+  &copy; 2025 Elite Crane & Towing Services. All rights reserved.
+</footer>
+
+<script>
+  function showTab(tabId) {
+    document.querySelectorAll('.tab-content').forEach(tab => {
+      tab.classList.remove('active');
+    });
+    document.getElementById(tabId).classList.add('active');
+
+    document.querySelectorAll('.tab-btn').forEach(btn => {
+      btn.classList.remove('active');
+    });
+    event.target.classList.add('active');
+  }
+</script>
+
+</body>
+</html>
