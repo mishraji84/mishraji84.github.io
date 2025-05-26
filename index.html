@@ -3,12 +3,17 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Elite Crane & Towing</title>
+  <title>Elite Crane & Towing | Emergency Towing & Crane Services in Noida</title>
+  <meta name="description" content="Elite Crane & Towing offers 24/7 emergency towing, heavy-duty crane rentals, and vehicle recovery services in Noida & Greater Noida. Fast, reliable & professional service within 30 minutes!" />
+  <meta name="keywords" content="Crane Service Noida, Towing Service Greater Noida, Emergency Vehicle Recovery, Heavy-Duty Crane Rental, 24/7 Towing Noida" />
+  <meta name="author" content="Elite Crane & Towing Services">
+  <link rel="canonical" href="https://www.elitecranetowing.com/" />
   <style>
     body {
       margin: 0;
       font-family: 'Segoe UI', sans-serif;
-      background: #fff;
+      background: url('cranebg1.png') no-repeat center center fixed;
+      background-size: cover;
       color: #333;
     }
 
@@ -22,19 +27,34 @@
     }
 
     header {
-      background: url('crane.jpg') no-repeat center center/cover;
-      color: white;
+      background-color: rgba(0,0,0,0.6);
       text-align: center;
       padding: 60px 20px;
+      position: relative;
+      color: white;
     }
 
     header h1 {
       font-size: 2.5rem;
-      margin-bottom: 10px;
+      color: #00FF7F;
+      text-shadow: 2px 2px 5px #000;
+      margin: 0;
     }
 
     header p {
-      font-size: 1.2rem;
+      font-size: 1.3rem;
+      color: #00FF7F;
+      font-weight: bold;
+      text-shadow: 1px 1px 3px #000;
+      margin: 8px 0 0;
+    }
+
+    header img {
+      position: absolute;
+      top: 10px;
+      left: 20px;
+      width: 100px;
+      height: auto;
     }
 
     nav {
@@ -83,10 +103,33 @@
       padding: 20px;
       max-width: 900px;
       margin: auto;
+      background-color: rgba(255,255,255,0.85);
+      border-radius: 8px;
     }
 
     .tab-content.active {
       display: block;
+    }
+
+    #services {
+      background-color: rgba(220, 248, 198, 0.95);
+    }
+
+    #about {
+      background-color: rgba(198, 231, 248, 0.95);
+    }
+
+    #contact {
+      background-color: rgba(248, 223, 198, 0.95);
+    }
+
+    .tab-content h2 {
+      color: #d9534f;
+    }
+
+    .tab-content p, .tab-content li {
+      color: #2b3e50;
+      font-size: 1.1rem;
     }
 
     footer {
@@ -123,8 +166,16 @@
 </div>
 
 <header>
-  <h1>Elite Crane & Towing Services</h1>
-  <p>Reliable | Fast | Professional – 24/7 Emergency Assistance</p>
+  <img src="ncrane.jpg" alt="Elite Crane & Towing Logo" />
+  <div style="text-align: center; max-width: 800px; margin: 0 auto;">
+    <h1>
+      🚛 Elite <span style="color:#00FF7F;">Crane</span> & <span style="color:#00FF7F;">Towing</span> Services
+    </h1>
+    <p>
+      Reliable <span style="color:#FF6347;">|</span> Fast <span style="color:#FF6347;">|</span> Professional – 
+      <span style="color:#FF1493;">24/7 Emergency</span>
+    </p>
+  </div>
 </header>
 
 <div class="whatsapp-contact">
@@ -147,4 +198,36 @@
     <li><strong>🚨 24/7 Emergency Towing:</strong> Always on call, day or night — anywhere in the city.</li>
     <li><strong>🏗 Heavy-Duty Crane Rentals:</strong> Ideal for construction, industrial lifting, and oversized loads.</li>
     <li><strong>🚙 Vehicle Recovery:</strong> Stuck in mud or snow? Rolled over? We’ll recover it, fast and safely.</li>
-    <li><strong>🏢 Construction Crane Operations:</strong> Ce
+    <li><strong>🏢 Construction Crane Operations:</strong> Certified operators for on-site lifting and logistics.</li>
+  </ul>
+</div>
+
+<div id="about" class="tab-content">
+  <h2>About Elite Crane & Towing</h2>
+  <p>Elite Crane & Towing Services has proudly served the Noida and Greater Noida region for over a decade. We specialize in both emergency and scheduled crane and towing services. Our mission is to ensure safety, speed, and reliability on every job.</p>
+  <p>With a fleet of modern vehicles and a team of trained professionals, we are committed to providing the best possible service at competitive prices.</p>
+</div>
+
+<div id="contact" class="tab-content">
+  <h2>Contact Us</h2>
+  <p><strong>📞 Phone:</strong> +91 97314 79078</p>
+  <p><strong>📧 Email:</strong> <a href="mailto:elitecrane.towing@gmail.com">elitecrane.towing@gmail.com</a></p>
+  <p><strong>📍 Address:</strong> Sector 62, Noida, Uttar Pradesh, India</p>
+  <p><strong>🕒 Working Hours:</strong> 24/7 – We’re always ready!</p>
+</div>
+
+<footer>
+  &copy; 2025 Elite Crane & Towing Services. All rights reserved.
+</footer>
+
+<script>
+  function showTab(tabId) {
+    document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+    document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+    document.getElementById(tabId).classList.add('active');
+    event.currentTarget.classList.add('active');
+  }
+</script>
+
+</body>
+</html>
