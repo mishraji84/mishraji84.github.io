@@ -3,44 +3,73 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Elite Crane & Towing | Emergency Towing & Crane Services in Noida</title>
-  <meta name="description" content="Elite Crane & Towing offers 24/7 emergency towing, heavy-duty crane rentals, and vehicle recovery services in Noida & Greater Noida. Fast, reliable & professional service within 30 minutes!" />
-  <meta name="keywords" content="Crane Service Noida, Towing Service Greater Noida, Emergency Vehicle Recovery, Heavy-Duty Crane Rental, 24/7 Towing Noida" />
-  <meta name="author" content="Elite Crane & Towing Services">
-  <link rel="canonical" href="https://www.elitecranetowing.com/" />
+  <title>Puja & Patri Service | Home Delivery of Fresh Puja Items in Shahdol</title>
   <style>
     body {
       margin: 0;
       font-family: 'Segoe UI', sans-serif;
-      background: url('cranebg1.png') no-repeat center center fixed;
+      background: url('pujapatri-bg.jpg') no-repeat center center fixed;
       background-size: cover;
       color: #333;
+      padding-bottom: 100px; /* Space for bottom elements */
     }
-
-    .marquee {
-      background-color: #d9534f;
+    .nav-bar {
+      background: #2b3e50;
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+    }
+    .nav-bar a, .dropbtn {
       color: white;
-      font-weight: bold;
-      padding: 0.5rem;
-      font-size: 1rem;
-      text-align: center;
+      padding: 14px 20px;
+      text-decoration: none;
+      cursor: pointer;
+      user-select: none;
+      display: block;
+    }
+    .nav-bar a:hover, .dropbtn:hover {
+      background-color: #1a2835;
+    }
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #2b3e50;
+      min-width: 180px;
+      z-index: 1;
+      top: 100%;
+      left: 0;
+      border-radius: 0 0 8px 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
+    .dropdown-content a {
+      padding: 12px 16px;
+      color: white;
+      display: block;
+    }
+    .dropdown-content a:hover {
+      background-color: #1a2835;
+    }
+    .dropdown.show .dropdown-content {
+      display: block;
     }
 
     header {
-      background-color: rgba(0,0,0,0.6);
+      background-color: rgba(0,0,0,0);
       text-align: center;
       padding: 60px 20px;
       position: relative;
       color: white;
     }
-
     header h1 {
       font-size: 2.5rem;
       color: #00FF7F;
       text-shadow: 2px 2px 5px #000;
       margin: 0;
     }
-
     header p {
       font-size: 1.3rem;
       color: #00FF7F;
@@ -48,7 +77,6 @@
       text-shadow: 1px 1px 3px #000;
       margin: 8px 0 0;
     }
-
     header img {
       position: absolute;
       top: 10px;
@@ -57,176 +85,167 @@
       height: auto;
     }
 
-    nav {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      background: #2b3e50;
-    }
-
-    nav button {
-      background: none;
-      border: none;
-      padding: 1rem;
-      color: white;
-      font-size: 1rem;
-      cursor: pointer;
-    }
-
-    nav button:hover,
-    nav button.active {
-      background-color: #1a2835;
-    }
-
     .whatsapp-contact {
-      text-align: center;
+      position: fixed;
+      bottom: 50px;
+      left: 50%;
+      transform: translateX(-50%);
       background: #f8f8f8;
-      padding: 10px;
+      padding: 6px 12px;
+      border-radius: 20px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+      z-index: 1001;
+      font-size: 0.9rem;
+      display: flex;
+      align-items: center;
+      gap: 6px;
     }
-
     .whatsapp-contact a {
       color: #25D366;
       text-decoration: none;
-      font-weight: bold;
-      font-size: 1.3rem;
+      font-weight: 600;
+      font-size: 0.95rem;
+      display: flex;
+      align-items: center;
+      gap: 6px;
     }
-
     .whatsapp-contact img {
-      vertical-align: middle;
-      margin-right: 8px;
-      width: 24px;
-      height: 24px;
+      width: 20px;
+      height: 20px;
     }
 
-    .tab-content {
-      display: none;
-      padding: 20px;
+    .footer-marquee {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      background: #2b3e50;
+      z-index: 1000;
+      color: yellow;
+      font-weight: bold;
+      font-size: 1rem;
+      text-align: center;
+    }
+    .footer-marquee marquee {
+      padding: 8px 0;
+    }
+
+    #content-area {
       max-width: 900px;
-      margin: auto;
-      background-color: rgba(255,255,255,0.85);
+      margin: 30px auto;
+      background: rgba(255, 255, 255, 0.85);
       border-radius: 8px;
-    }
-
-    .tab-content.active {
-      display: block;
-    }
-
-    #services {
-      background-color: rgba(220, 248, 198, 0.95);
-    }
-
-    #about {
-      background-color: rgba(198, 231, 248, 0.95);
-    }
-
-    #contact {
-      background-color: rgba(248, 223, 198, 0.95);
-    }
-
-    .tab-content h2 {
-      color: #d9534f;
-    }
-
-    .tab-content p, .tab-content li {
+      padding: 20px;
       color: #2b3e50;
       font-size: 1.1rem;
-    }
-
-    footer {
-      text-align: center;
-      padding: 1rem;
-      background: #2b3e50;
-      color: white;
-      margin-top: 2rem;
-    }
-
-    @media (max-width: 600px) {
-      header h1 {
-        font-size: 2rem;
-      }
-      header p {
-        font-size: 1rem;
-      }
-      nav button {
-        font-size: 0.9rem;
-        padding: 0.8rem;
-      }
-      .whatsapp-contact a {
-        font-size: 1.1rem;
-      }
+      display: none;
     }
   </style>
 </head>
 <body>
 
-<div class="marquee">
-  <marquee behavior="scroll" direction="left" scrollamount="6">
-    🚨 Urgent towing and Crane service within 30 min all over Noida and Greater Noida 🚨
-  </marquee>
+<div class="nav-bar">
+  <a href="#" id="homeLink">Home</a>
+  <div class="dropdown" id="servicesDropdown">
+    <a href="javascript:void(0);" class="dropbtn" id="servicesBtn">Services ▼</a>
+    <div class="dropdown-content">
+      <a href="#" id="Satyanarayan_Katha">Satyanarayan Katha</a>
+      <a href="#">Vishnu Katha</a>
+      <a href="#">Shiv Katha</a>
+    </div>
+  </div>
 </div>
 
 <header>
-  <img src="ncrane.jpg" alt="Elite Crane & Towing Logo" />
-  <div style="text-align: center; max-width: 800px; margin: 0 auto;">
-    <h1>
-      🚛 Elite <span style="color:#00FF7F;">Crane</span> & <span style="color:#00FF7F;">Towing</span> Services
-    </h1>
-    <p>
-      Reliable <span style="color:#FF6347;">|</span> Fast <span style="color:#FF6347;">|</span> Professional – 
-      <span style="color:#FF1493;">24/7 Emergency</span>
-    </p>
+  <div style="max-width: 800px; margin: 0 auto;">
+    <h1>🚛 Puja Patri on single click service</h1>
+    <p>Natural <span style="color:#FF6347;">|</span> Pure <span style="color:#FF6347;">|</span> Fresh</p>
   </div>
 </header>
 
-<div class="whatsapp-contact">
-  <a href="https://wa.me/919731479078" target="_blank">
-    <img src="https://img.icons8.com/color/28/000000/whatsapp--v1.png" alt="WhatsApp" />
-    +91 97314 79078 (WhatsApp)
-  </a>
-</div>
+<div id="content-area"></div>
 
-<nav>
-  <button class="tab-btn active" onclick="showTab('services')">Services</button>
-  <button class="tab-btn" onclick="showTab('about')">About Us</button>
-  <button class="tab-btn" onclick="showTab('contact')">Contact</button>
-</nav>
-
-<div id="services" class="tab-content active">
-  <h2>Our Services</h2>
-  <p><strong>Fast. Safe. Professional.</strong> We’re equipped with the latest gear and skilled operators to handle everything from breakdowns to big-lift jobs — all with <span style="color: #d9534f;"><strong>30-Minute Emergency Response</strong></span> in most areas!</p>
+<!-- Hidden content for Satyanarayan Katha -->
+<div id="satyanarayan-content" style="display:none;">
+  <h2>Puja Samagri (पूजा सामग्री)</h2>
   <ul>
-    <li><strong>🚨 24/7 Emergency Towing:</strong> Always on call, day or night — anywhere in the city.</li>
-    <li><strong>🏗 Heavy-Duty Crane Rentals:</strong> Ideal for construction, industrial lifting, and oversized loads.</li>
-    <li><strong>🚙 Vehicle Recovery:</strong> Stuck in mud or snow? Rolled over? We’ll recover it, fast and safely.</li>
-    <li><strong>🏢 Construction Crane Operations:</strong> Certified operators for on-site lifting and logistics.</li>
+    <li><strong>Puja Samagri Packet</strong>: पूजा सामग्री पैकेट (मौली, गंगाजल, जनेऊ, धूप, अगरबत्ती, रुई, कपूर, चंदन, कुमकुम)</li>
+    <li><strong>Havan Samagri Pkt.</strong>: हवन सामग्री पैकेट</li>
+    <li><strong>Coconut</strong>: नारियल</li>
+    <li><strong>Fruits (Five Types)</strong>: फल (पांच प्रकार के)</li>
+    <li><strong>Paan leaves</strong>: पान के पत्ते</li>
+    <li><strong>Ghee</strong>: घी</li>
+    <li><strong>Milk</strong>: दूध</li>
+    <li><strong>Honey</strong>: शहद</li>
+    <li><strong>Sugar</strong>: चीनी</li>
+    <li><strong>Yogurt</strong>: दही</li>
+    <li><strong>Dry Fruits</strong>: सूखे मेवे</li>
+    <li><strong>Sweet Flowers</strong>: मीठे फूल</li>
+    <li><strong>Red Cloth 1 Yd</strong>: लाल कपड़ा 1 गज</li>
+    <li><strong>Aluminum foil Roll</strong>: एल्युमिनियम फॉयल रोल</li>
+    <li><strong>Murti or Photo</strong>: मूर्ति या फोटो</li>
+    <li><strong>Rice</strong>: चावल</li>
+    <li><strong>Lota</strong>: लोटा</li>
+    <li><strong>Katories</strong>: कटोरियाँ</li>
+    <li><strong>Thalis</strong>: थालियाँ</li>
+    <li><strong>Bed Sheet</strong>: चादर</li>
+    <li><strong>Dry Coconut</strong>: सूखा नारियल</li>
+  </ul>
+
+  <h2>Home Delivery Package only ₹101</h2>
+  <ul>
+    <li>केला पत्ता (Kela Patta)</li>
+    <li>पान पत्ता (Paan Patta)</li>
+    <li>आम की टेरियां (Aam ke teri)</li>
+    <li>फूल माला (Pushp Mala)</li>
+    <li>बेल पत्री (Bel Patri)</li>
+    <li>सूखा नारियल (Dry Coconut)</li>
   </ul>
 </div>
 
-<div id="about" class="tab-content">
-  <h2>About Elite Crane & Towing</h2>
-  <p>Elite Crane & Towing Services has proudly served the Noida and Greater Noida region for over a decade. We specialize in both emergency and scheduled crane and towing services. Our mission is to ensure safety, speed, and reliability on every job.</p>
-  <p>With a fleet of modern vehicles and a team of trained professionals, we are committed to providing the best possible service at competitive prices.</p>
+<!-- WhatsApp contact at bottom center -->
+<div class="whatsapp-contact">
+  <a href="https://wa.me/919731479078" target="_blank" rel="noopener noreferrer">
+    <img src="https://img.icons8.com/color/28/000000/whatsapp--v1.png" alt="WhatsApp" />
+    +91 97314 79078
+  </a>
 </div>
 
-<div id="contact" class="tab-content">
-  <h2>Contact Us</h2>
-  <p><strong>📞 Phone:</strong> +91 97314 79078</p>
-  <p><strong>📧 Email:</strong> <a href="mailto:elitecrane.towing@gmail.com">elitecrane.towing@gmail.com</a></p>
-  <p><strong>📍 Address:</strong> Sector 62, Noida, Uttar Pradesh, India</p>
-  <p><strong>🕒 Working Hours:</strong> 24/7 – We’re always ready!</p>
+<!-- Footer Marquee -->
+<div class="footer-marquee">
+  <marquee behavior="scroll" direction="left" scrollamount="10">
+    🙏 Home Delivery Service free within 3 km radius of Shahdol. 🙏
+  </marquee>
 </div>
-
-<footer>
-  &copy; 2025 Elite Crane & Towing Services. All rights reserved.
-</footer>
 
 <script>
-  function showTab(tabId) {
-    document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
-    document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
-    document.getElementById(tabId).classList.add('active');
-    event.currentTarget.classList.add('active');
-  }
+  const servicesBtn = document.getElementById('servicesBtn');
+  const servicesDropdown = document.getElementById('servicesDropdown');
+  const contentArea = document.getElementById('content-area');
+  const satyanarayanContent = document.getElementById('satyanarayan-content');
+
+  servicesBtn.addEventListener('click', function(e) {
+    e.preventDefault();
+    servicesDropdown.classList.toggle('show');
+  });
+
+  window.addEventListener('click', function(e) {
+    if (!servicesDropdown.contains(e.target) && !servicesBtn.contains(e.target)) {
+      servicesDropdown.classList.remove('show');
+    }
+  });
+
+  document.getElementById('Satyanarayan_Katha').addEventListener('click', function(e) {
+    e.preventDefault();
+    contentArea.innerHTML = satyanarayanContent.innerHTML;
+    contentArea.style.display = 'block';
+    servicesDropdown.classList.remove('show');
+  });
+
+  document.getElementById('homeLink').addEventListener('click', function(e){
+    e.preventDefault();
+    contentArea.style.display = 'none';
+    servicesDropdown.classList.remove('show');
+  });
 </script>
 
 </body>
