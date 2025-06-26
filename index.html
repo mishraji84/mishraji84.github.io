@@ -11,8 +11,9 @@
       background: url('pujapatri-bg.jpg') no-repeat center center fixed;
       background-size: cover;
       color: #333;
-      padding-bottom: 100px; /* Space for bottom elements */
+      padding-bottom: 100px; /* space for footer */
     }
+
     .nav-bar {
       background: #2b3e50;
       display: flex;
@@ -77,13 +78,6 @@
       text-shadow: 1px 1px 3px #000;
       margin: 8px 0 0;
     }
-    header img {
-      position: absolute;
-      top: 10px;
-      left: 20px;
-      width: 100px;
-      height: auto;
-    }
 
     .whatsapp-contact {
       position: fixed;
@@ -139,10 +133,30 @@
       font-size: 1.1rem;
       display: none;
     }
+
+    .delivery-section {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      margin-top: 20px;
+      align-items: flex-start;
+    }
+
+    .delivery-section img {
+      max-width: 250px;
+      border-radius: 8px;
+      box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+    }
+
+    .delivery-section ul {
+      margin: 0;
+      padding-left: 20px;
+    }
   </style>
 </head>
 <body>
 
+<!-- Navigation Bar -->
 <div class="nav-bar">
   <a href="#" id="homeLink">Home</a>
   <div class="dropdown" id="servicesDropdown">
@@ -155,6 +169,7 @@
   </div>
 </div>
 
+<!-- Header -->
 <header>
   <div style="max-width: 800px; margin: 0 auto;">
     <h1>🚛 Puja Patri on single click service</h1>
@@ -162,9 +177,10 @@
   </div>
 </header>
 
+<!-- Dynamic Content Area -->
 <div id="content-area"></div>
 
-<!-- Hidden content for Satyanarayan Katha -->
+<!-- Hidden Satyanarayan Content -->
 <div id="satyanarayan-content" style="display:none;">
   <h2>Puja Samagri (पूजा सामग्री)</h2>
   <ul>
@@ -191,18 +207,25 @@
     <li><strong>Dry Coconut</strong>: सूखा नारियल</li>
   </ul>
 
-  <h2>Home Delivery Package only ₹101</h2>
-  <ul>
-    <li>केला पत्ता (Kela Patta)</li>
-    <li>पान पत्ता (Paan Patta)</li>
-    <li>आम की टेरियां (Aam ke teri)</li>
-    <li>फूल माला (Pushp Mala)</li>
-    <li>बेल पत्री (Bel Patri)</li>
-    <li>सूखा नारियल (Dry Coconut)</li>
-  </ul>
+  <!-- Home Delivery Package Section -->
+  <div class="delivery-section">
+    <div>
+      <h2>Home Delivery Package only ₹101</h2>
+      <img src="belpatra.jpg" alt="Belpatra" style="width: 100px; height: 100px; border-radius: 10px;" />
+      <ul>
+        <li>केला पत्ता (Kela Patta)</li>
+        <li>पान पत्ता (Paan Patta)</li>
+        <li>आम की टेरियां (Aam ke teri)</li>
+        <li>फूल माला (Pushp Mala)</li>
+        <li>बेल पत्री (Bel Patri)</li>
+        <li>सूखा नारियल (Dry Coconut)</li>
+      </ul>
+    </div>
+    
+  </div>
 </div>
 
-<!-- WhatsApp contact at bottom center -->
+<!-- WhatsApp Floating Button -->
 <div class="whatsapp-contact">
   <a href="https://wa.me/919731479078" target="_blank" rel="noopener noreferrer">
     <img src="https://img.icons8.com/color/28/000000/whatsapp--v1.png" alt="WhatsApp" />
