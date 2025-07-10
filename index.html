@@ -160,9 +160,9 @@
     #visitor-counter {
       position: fixed;
       top: 10px;
-      left: 10px;
+      left: 30px;
       transform: translateX(-50%);
-      background: rgba(255, 255, 255, 0.9);
+      background: rgba(15, 1, 1, 0.9);
       padding: 6px 12px;
       border-radius: 20px;
       font-weight: bold;
@@ -391,12 +391,13 @@
 
         transaction.set(counterDoc, { count: newCount });
         document.getElementById('visit-count').innerText = newCount;
+        console.log("Old Count:", doc.exists ? doc.data().count : 0, "New Count:", newCount);
       });
     } catch (e) {
       console.error("Visit counter error:", e);
       document.getElementById('visit-count').innerText = 'Error';
     }
-    console.log("Old Count:", doc.exists ? doc.data().count : 0, "New Count:", newCount);
+    
   }
 
   // ✅ Call function on page load
