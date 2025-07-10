@@ -159,8 +159,8 @@
     }
     #visitor-counter {
       position: fixed;
-      bottom: 120px;
-      left: 50%;
+      top: 10px;
+      left: 10px;
       transform: translateX(-50%);
       background: rgba(255, 255, 255, 0.9);
       padding: 6px 12px;
@@ -169,7 +169,7 @@
       font-size: 0.95rem;
       box-shadow: 0 2px 4px rgba(0,0,0,0.2);
       z-index: 1001;
-      color: #2b3e50;
+      color: #d5eb0f;
     }
   </style>
 </head>
@@ -396,7 +396,7 @@
       console.error("Visit counter error:", e);
       document.getElementById('visit-count').innerText = 'Error';
     }
-    console.log("Old Count:", doc.data().count, "New Count:", newCount);
+    console.log("Old Count:", doc.exists ? doc.data().count : 0, "New Count:", newCount);
   }
 
   // ✅ Call function on page load
