@@ -4,6 +4,11 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Puja & Patri Service | Home Delivery of Fresh Puja Items in Shahdol</title>
+  <!-- Firebase App (Core) -->
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+<!-- Firestore -->
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+
   <style>
     body {
       margin: 0;
@@ -151,6 +156,20 @@
     .delivery-section ul {
       margin: 0;
       padding-left: 20px;
+    }
+    #visitor-counter {
+      position: fixed;
+      bottom: 120px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(255, 255, 255, 0.9);
+      padding: 6px 12px;
+      border-radius: 20px;
+      font-weight: bold;
+      font-size: 0.95rem;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+      z-index: 1001;
+      color: #2b3e50;
     }
   </style>
 </head>
@@ -331,7 +350,10 @@
     +91 97314 79078
   </a>
 </div>
-
+<!-- 👥 Visitor Counter Div -->
+<div id="visitor-counter">
+  👤 Visitors: <span id="visit-count">...</span>
+</div>
 <!-- Footer Marquee -->
 <div class="footer-marquee">
   <marquee behavior="scroll" direction="left" scrollamount="10">
@@ -339,6 +361,49 @@
   </marquee>
 </div>
 
+<script>
+  // Import the functions you need from the SDKs you need
+import { initializeApp } from "https://www.gstatic.com/firebasejs/11.10.0/firebase-app.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  const firebaseConfig = {
+    apiKey: "AIzaSyAJ_4QsDmGF32sSnDuartwBjQwpLiDBbIQ",
+    authDomain: "pujavisitorcounter.firebaseapp.com",
+    projectId: "pujavisitorcounter",
+    storageBucket: "pujavisitorcounter.firebasestorage.app",
+    messagingSenderId: "650871514473",
+    appId: "1:650871514473:web:8ab0bc8d2a040fad57c9f8"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+// Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  const db = firebase.firestore();
+
+  const counterDoc = db.collection('visitorStats').doc('pageVisits');
+
+  async function updateVisitCounter() {
+    try {
+      await db.runTransaction(async (transaction) => {
+        const doc = await transaction.get(counterDoc);
+        let newCount = 1;
+
+        if (doc.exists) {
+          newCount = doc.data().count + 1;
+        }
+
+        transaction.set(counterDoc, { count: newCount });
+        document.getElementById('visit-count').innerText = newCount;
+      });
+    } catch (e) {
+      console.error("Visit counter error:", e);
+      document.getElementById('visit-count').innerText = 'Error';
+    }
+  }
+  </script>
 <script>
   const servicesBtn = document.getElementById('servicesBtn');
   const servicesDropdown = document.getElementById('servicesDropdown');
@@ -383,6 +448,6 @@
     servicesDropdown.classList.remove('show');
   });
 </script>
-
 </body>
+
 </html>
