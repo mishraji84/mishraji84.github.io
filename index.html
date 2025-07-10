@@ -396,11 +396,12 @@
       console.error("Visit counter error:", e);
       document.getElementById('visit-count').innerText = 'Error';
     }
+    console.log("Old Count:", doc.data().count, "New Count:", newCount);
   }
 
   // ✅ Call function on page load
   updateVisitCounter();
-  console.log("Old Count:", doc.data().count, "New Count:", newCount);
+  
 </script>
 
 <script>
