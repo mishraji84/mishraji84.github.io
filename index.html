@@ -185,6 +185,7 @@
       <a href="#" id="Satyanarayan_Katha">Satyanarayan Katha</a>
       <a href="#" id="Shiv_Katha">Rudrabhishek (Shiv Pujan)</a>
       <a href="#" id="Ganesh_Katha">Ganesh Chaturathi (Ganesh Pujan)</a>
+      <a href="#" id="searchPurohit">🔍 Search Purohit</a>
     </div>
   </div>
 </div>
@@ -385,6 +386,26 @@
   </form>
 </div>
 
+<!-- Search Purohit Section -->
+<div id="search-purohit-form" style="display:none; max-width:600px; margin:20px auto; background:white; padding:20px; border-radius:10px;">
+  <h2>Search Purohit</h2>
+
+  <!-- ✅ FORM ONLY -->
+  <form id="searchForm">
+    <label>State:</label><br/>
+    <input type="text" id="searchState" style="width: 100%; padding: 8px;" /><br/><br/>
+
+    <label>City:</label><br/>
+    <input type="text" id="searchCity" style="width: 100%; padding: 8px;" /><br/><br/>
+
+    <button type="submit" style="padding: 10px 20px;">Search</button>
+  </form>
+
+  <!-- ✅ RESULTS ONLY -->
+  <div id="purohitResults" style="margin-top: 20px;"></div>
+</div>
+
+
 
 <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
@@ -431,6 +452,9 @@
 
   // Show Purohit Registration Form
 const purohitBtn = document.getElementById('purohitRegistrationBtn');
+document.getElementById('purohitRegistrationBtn').style.pointerEvents = 'none';
+document.getElementById('purohitRegistrationBtn').style.opacity = '0.5';
+//document.getElementById('purohitRegisterBtn').style.display = 'none';
 const purohitFormDiv = document.getElementById('purohit-form');
 const purohitForm = document.getElementById('purohitRegistrationForm');
 
@@ -475,6 +499,62 @@ purohitForm.addEventListener('submit', async function(e) {
   }
 });
   
+// Search Purohit Logic
+const searchBtn = document.getElementById('searchPurohit');
+const searchFormDiv = document.getElementById('search-purohit-form');
+const searchForm = document.getElementById('searchForm');
+const purohitResults = document.getElementById('purohitResults');
+
+searchBtn.addEventListener('click', function(e) {
+  e.preventDefault();
+
+  // Hide other sections
+  contentArea.style.display = 'none';
+  purohitFormDiv.style.display = 'none';
+  satyanarayanContent.style.display = 'none';
+  shivContent.style.display = 'none';
+  ganeshContent.style.display = 'none';
+
+  // Show search form
+  searchFormDiv.style.display = 'block';
+  purohitResults.innerHTML = '';
+});
+
+searchForm.addEventListener('submit', async function(e) {
+  e.preventDefault();
+  const state = document.getElementById('searchState').value.trim().toLowerCase();
+  const city = document.getElementById('searchCity').value.trim().toLowerCase();
+  purohitResults.innerHTML = '🔄 Searching...';
+
+  try {
+    const snapshot = await db.collection('purohitRegistrations').get();
+    const matches = snapshot.docs
+      .map(doc => doc.data())
+      .filter(p =>
+        p.state?.toLowerCase().includes(state) &&
+        p.city?.toLowerCase().includes(city)
+      );
+
+if (matches.length === 0) {
+  purohitResults.innerHTML = '<p>No Purohits found for your selection.</p>';
+} else {
+  purohitResults.innerHTML = '<b>List of purohits available in your city</b>';
+  purohitResults.innerHTML = purohitResults.innerHTML + matches.map(p => `
+    <div style="padding: 10px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 8px;">
+      <strong>Name:</strong> ${p.name}<br/>
+      <strong>Phone:</strong> ${p.phone}<br/>
+      <strong>Experience:</strong> ${p.experience || 'N/A'} years<br/>
+      
+    </div>
+  `).join('');
+  searchForm.style.display = 'none';  // ✅ Hides the form after results show
+}
+  } catch (err) {
+    console.error("Search Error:", err);
+    purohitResults.innerHTML = '<p style="color:red;">Error fetching data. Try again.</p>';
+  }
+});
+
  </script>
 
 <script>
