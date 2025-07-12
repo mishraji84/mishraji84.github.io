@@ -178,6 +178,7 @@
 <!-- Navigation Bar -->
 <div class="nav-bar">
   <a href="#" id="homeLink">Home</a>
+  <a href="#" id="purohitRegistrationBtn">Purohit Registration</a>
   <div class="dropdown" id="servicesDropdown">
     <a href="javascript:void(0);" class="dropbtn" id="servicesBtn">Services ▼</a>
     <div class="dropdown-content">
@@ -361,8 +362,33 @@
   </marquee>
 </div>
 
+<!-- Purohit Registration Form -->
+<div id="purohit-form" style="display:none; max-width: 600px; margin: 20px auto; background: white; border-radius: 10px; padding: 20px;">
+  <h2>Purohit Registration</h2>
+  <form id="purohitRegistrationForm">
+    <label>Name:</label><br/>
+    <input type="text" id="purohitName" required style="width: 100%; padding: 8px;" /><br/><br/>
+    
+    <label>Phone:</label><br/>
+    <input type="text" id="purohitPhone" required style="width: 100%; padding: 8px;" /><br/><br/>
+    
+    <label>State:</label><br/>
+    <input type="text" id="purohitState" required style="width: 100%; padding: 8px;" /><br/><br/>
+    
+    <label>City:</label><br/>
+    <input type="text" id="purohitCity" required style="width: 100%; padding: 8px;" /><br/><br/>
+
+    <label>Experience (Years):</label><br/>
+    <input type="number" id="purohitExperience" style="width: 100%; padding: 8px;" /><br/><br/>
+
+    <button type="submit" style="padding: 10px 20px;">Register</button>
+  </form>
+</div>
+
+
 <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.24.0/firebase-storage-compat.js"></script>
 <script>
   const firebaseConfig = {
     apiKey: "AIzaSyAJ_4QsDmGF32sSnDuartwBjQwpLiDBbIQ",
@@ -402,8 +428,54 @@
 
   // ✅ Call function on page load
   updateVisitCounter();
+
+  // Show Purohit Registration Form
+const purohitBtn = document.getElementById('purohitRegistrationBtn');
+const purohitFormDiv = document.getElementById('purohit-form');
+const purohitForm = document.getElementById('purohitRegistrationForm');
+
+purohitBtn.addEventListener('click', function(e) {
+  e.preventDefault();
   
-</script>
+  // Hide other content
+  document.getElementById('content-area').style.display = 'none';
+  document.getElementById('satyanarayan-content').style.display = 'none';
+  document.getElementById('shiv-content').style.display = 'none';
+  document.getElementById('ganesh-content').style.display = 'none';
+  
+  // Show form
+  purohitFormDiv.style.display = 'block';
+});
+  // Save to Firestore on Submit
+purohitForm.addEventListener('submit', async function(e) {
+  e.preventDefault();
+  
+  const name = document.getElementById('purohitName').value;
+  const phone = document.getElementById('purohitPhone').value;
+  const state = document.getElementById('purohitState').value;
+  const city = document.getElementById('purohitCity').value;
+  const experience = document.getElementById('purohitExperience').value;
+
+  try {
+    await db.collection('purohitRegistrations').add({
+      name,
+      phone,
+      state,
+      city,
+      experience: Number(experience),
+      registeredAt: firebase.firestore.FieldValue.serverTimestamp()
+    });
+
+    alert("Purohit registered successfully!");
+    purohitForm.reset();
+    purohitFormDiv.style.display = 'none';
+  } catch (err) {
+    console.error("Firestore Error:", err);
+    alert("Registration failed. Try again.");
+  }
+});
+  
+ </script>
 
 <script>
   const servicesBtn = document.getElementById('servicesBtn');
@@ -448,6 +520,7 @@
     contentArea.style.display = 'none';
     servicesDropdown.classList.remove('show');
   });
+
 </script>
 </body>
 
